@@ -2,7 +2,7 @@
 
 """
 Revision History:
-  2017-09-05: KSB, created in support of TRA IRAD
+  2017-09-05: KSB, created
 
 """
 from DataProducer import MyData
@@ -17,6 +17,8 @@ VERSION = "1.0.20170906a"
 
 class Receiver():
   def __init__(self):
+    self.addr = socket.gethostbyname('roofpi')
+    self.sock = 24831
     return
   
   def get_data(self):
@@ -25,7 +27,7 @@ class Receiver():
     
     # connect to the server
     try:
-      self.rx_socket.connect((socket.gethostname(), 4831))
+      self.rx_socket.connect((self.addr, self.sock))
     except socket.error, exc:
       print "Receiver.get_data(): Unable to connect: %s"%exc
       return

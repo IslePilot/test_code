@@ -2,7 +2,7 @@
 
 """
 Revision History:
-  2017-09-05: KSB, created in support of TRA IRAD
+  2017-09-05: KSB, created
 
 """
 # define a version for the file
@@ -128,7 +128,9 @@ if __name__ == '__main__':
   serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   
   # bind the socket
-  serversocket.bind(('192.168.0.77', 24831))
+  addr = socket.gethostbyname(socket.gethostname())
+  print addr
+  serversocket.bind((addr, 24831))
   
   # become a server
   serversocket.listen(1)
