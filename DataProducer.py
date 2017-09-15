@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 
 """
-***************************************************************************
-Copyright 2017 (C) Lockheed Martin (LM)
-                   All Rights Reserved
-This source code is being provided to facilitate use of WindTracer data.
-This code may not be redistributed without written permission from LM.
-***************************************************************************
 Revision History:
   2017-09-05: KSB, created in support of TRA IRAD
 
