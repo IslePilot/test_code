@@ -44,13 +44,11 @@ class Receiver():
     return
   
   def rx_data(self):
-    header = []
     header_length = 14
-    bytes_received = 0
     
     # get the header to find the length
     header = self.rx_bytes(header_length)
-    flag, data_length = header.split(' ')
+    data_length = header.split(' ')[1]
     
     # get the datablock
     return self.rx_bytes(int(data_length))
